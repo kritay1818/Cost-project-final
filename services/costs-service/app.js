@@ -8,7 +8,7 @@ const User = require('../../models/User');
 const Report = require('../../models/Report');
 const { connectDB } = require('../../shared/db');
 const { logger } = require('../../shared/logger');
-const { httpLogger, createRequestLogger } = require('../../shared/requestLogger');
+const { httpLogger, createRequestLogger } = require('../../shared/request_logger');
 const { AppError, notFoundHandler, errorHandler } = require('../../shared/error');
 
 const SERVICE_NAME = 'costs-service';

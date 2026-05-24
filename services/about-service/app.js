@@ -4,9 +4,9 @@ require('dotenv').config({ path: path.join(__dirname, '../../.env') });
 const express = require('express');
 const { connectDB } = require('../../shared/db');
 const { logger } = require('../../shared/logger');
-const { httpLogger, createRequestLogger } = require('../../shared/requestLogger');
+const { httpLogger, createRequestLogger } = require('../../shared/request_logger');
 const { notFoundHandler, errorHandler } = require('../../shared/error');
-const { getTeamMembers } = require('./teamMembers');
+const { getTeamMembers } = require('./team_members');
 
 const SERVICE_NAME = 'about-service';
 const port = process.env.PORT || process.env.ABOUT_PORT || 3004;

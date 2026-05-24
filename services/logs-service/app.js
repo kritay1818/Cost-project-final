@@ -5,7 +5,7 @@ const express = require('express');
 const Log = require('../../models/Log');
 const { connectDB } = require('../../shared/db');
 const { logger } = require('../../shared/logger');
-const { httpLogger, createRequestLogger } = require('../../shared/requestLogger');
+const { httpLogger, createRequestLogger } = require('../../shared/request_logger');
 const { notFoundHandler, errorHandler } = require('../../shared/error');
 
 const SERVICE_NAME = 'logs-service';
