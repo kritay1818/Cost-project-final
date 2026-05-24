@@ -9,7 +9,7 @@ const { notFoundHandler, errorHandler } = require('../../shared/error');
 const { getTeamMembers } = require('./teamMembers');
 
 const SERVICE_NAME = 'about-service';
-const PORT = process.env.ABOUT_PORT || 3004;
+const port = process.env.PORT || process.env.ABOUT_PORT || 3004;
 
 async function start() {
   await connectDB();
@@ -32,8 +32,8 @@ async function start() {
   app.use(notFoundHandler);
   app.use(errorHandler);
 
-  app.listen(PORT, () => {
-    logger.info(`${SERVICE_NAME} listening on port ${PORT}`);
+  app.listen(port, () => {
+    logger.info(`${SERVICE_NAME} listening on port ${port}`);
   });
 }
 

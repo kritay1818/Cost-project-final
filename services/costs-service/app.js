@@ -12,7 +12,7 @@ const { httpLogger, createRequestLogger } = require('../../shared/requestLogger'
 const { AppError, notFoundHandler, errorHandler } = require('../../shared/error');
 
 const SERVICE_NAME = 'costs-service';
-const PORT = process.env.COSTS_PORT || 3003;
+const port = process.env.PORT || process.env.COSTS_PORT || 3003;
 
 // Order of categories in GET /api/report response array
 const REPORT_CATEGORY_ORDER = ['food', 'education', 'health', 'housing', 'sports'];
@@ -316,8 +316,8 @@ async function start() {
   app.use(notFoundHandler);
   app.use(errorHandler);
 
-  app.listen(PORT, () => {
-    logger.info(`${SERVICE_NAME} listening on port ${PORT}`);
+  app.listen(port, () => {
+    logger.info(`${SERVICE_NAME} listening on port ${port}`);
   });
 }
 

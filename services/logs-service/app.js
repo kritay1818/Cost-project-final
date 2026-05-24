@@ -9,7 +9,7 @@ const { httpLogger, createRequestLogger } = require('../../shared/requestLogger'
 const { notFoundHandler, errorHandler } = require('../../shared/error');
 
 const SERVICE_NAME = 'logs-service';
-const PORT = process.env.LOGS_PORT || 3001;
+const port = process.env.PORT || process.env.LOGS_PORT || 3001;
 
 async function start() {
   await connectDB();
@@ -37,8 +37,8 @@ async function start() {
   app.use(notFoundHandler);
   app.use(errorHandler);
 
-  app.listen(PORT, () => {
-    logger.info(`${SERVICE_NAME} listening on port ${PORT}`);
+  app.listen(port, () => {
+    logger.info(`${SERVICE_NAME} listening on port ${port}`);
   });
 }
 

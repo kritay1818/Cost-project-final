@@ -10,7 +10,7 @@ const { httpLogger, createRequestLogger } = require('../../shared/requestLogger'
 const { AppError, notFoundHandler, errorHandler } = require('../../shared/error');
 
 const SERVICE_NAME = 'users-service';
-const PORT = process.env.USERS_PORT || 3002;
+const port = process.env.PORT || process.env.USERS_PORT || 3002;
 
 // Response shape for list/create (custom id, no MongoDB _id)
 function formatUser(user) {
@@ -162,8 +162,8 @@ async function start() {
   app.use(notFoundHandler);
   app.use(errorHandler);
 
-  app.listen(PORT, () => {
-    logger.info(`${SERVICE_NAME} listening on port ${PORT}`);
+  app.listen(port, () => {
+    logger.info(`${SERVICE_NAME} listening on port ${port}`);
   });
 }
 
