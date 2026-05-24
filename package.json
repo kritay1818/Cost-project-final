@@ -1,0 +1,28 @@
+{
+  "name": "cost-project",
+  "version": "1.0.0",
+  "description": "Server-side course final project — microservices with Express and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start:logs": "node services/logs-service/app.js",
+    "start:users": "node services/users-service/app.js",
+    "start:costs": "node services/costs-service/app.js",
+    "start:about": "node services/about-service/app.js",
+    "dev:logs": "node --watch services/logs-service/app.js",
+    "dev:users": "node --watch services/users-service/app.js",
+    "dev:costs": "node --watch services/costs-service/app.js",
+    "dev:about": "node --watch services/about-service/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mongoosejs/double": "^0.3.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongodb": "^7.2.0",
+    "mongoose": "^8.9.3",
+    "pino": "^9.6.0",
+    "pino-http": "^10.3.0"
+  }
+}
