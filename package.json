@@ -21,7 +21,7 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "mongodb": "^7.2.0",
-    "mongoose": "^8.9.3",
+    "mongoose": "^6.13.9",
     "pino": "^9.6.0",
     "pino-http": "^10.3.0"
   }
